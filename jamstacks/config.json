@@ -1,0 +1,19 @@
+{
+  "name": "Crystal Pools & Spas",
+  "description": "A bright poolside-blue theme for pool and spa cleaning and service businesses: a glossy waterline tile band with painted depth markers, weekly maintenance plans as deep-end markers, a water clarity comparator that points green pools to the right rescue, a test-kit chart of ideal water ranges, repairs from pumps to heaters, route days by city, phone hours and a Jamstacks contact component for plan, repair and rescue enquiries.",
+  "tech": "next",
+  "type": "pool",
+  "style": "crystal",
+  "internal": false,
+  "components": [
+    "support-form"
+  ],
+  "configFile": "site.config.json",
+  "screenshots": {
+    "light": "jamstacks/home-light.jpg",
+    "dark": "jamstacks/home-dark.jpg",
+    "theme": {
+      "strategy": "media"
+    }
+  }
+}

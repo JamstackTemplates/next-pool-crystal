@@ -17,14 +17,24 @@ The `.claude/skills/` folder holds `write-plan` (drafts `plan/PLAN.md`) and `cle
 
 ## Structure and content
 
-`content/business.ts` holds the starter's shared business details and sample copy. When building a
-site, write page-specific copy directly in the route's `app/**/page.tsx` as JSX children of named React
-components. Put headings, calls to action, labels and captions in page order. Backing components
-own the semantic markup, Tailwind styles, accessibility and behavior. Keep typed data in `content/`
-for values the site reads programmatically, including contact details and structured collections.
-Document fields and validate IDs, required
-fields, prices, availability and references with item-specific failures. Rename in content and
-site.config.json. Keep the provisioner's config shape: name, description, domain, optional timeZone,
+Typed business collections live in `content/`:
+- `content/business.ts`: shared business name, email, phone, `America/Los_Angeles` phone hours, `seasonalNotice`, diagnostic/water-test fees and enquiry copy.
+- `content/plans.ts`: weekly maintenance tiers (`splash`, `lap-lane`, `deep-end`) with depth markers, monthly USD prices, includes and `featured`.
+- `content/addons.ts`: optional monthly/per-visit add-ons.
+- `content/repairs.ts`: residential equipment repairs, categories, starting USD prices and `available` flags.
+- `content/water-tests.ts`: ideal chemistry ranges and test-strip pad colours.
+- `content/rescue-levels.ts`: five green-pool rescue tiers (`haze`–`lagoon`) plus the `crystal` clarity state.
+- `content/service-area.ts`: served OC coastal cities, Mon–Fri route days and ZIP codes.
+- `content/visit-steps.ts`: seven weekly visit steps.
+
+Page-specific prose, headings, calls to action and FAQ copy live directly in each route's
+`app/**/page.tsx` (`app/page.tsx`, `app/plans/page.tsx`, `app/repairs-and-testing/page.tsx`,
+`app/green-pool-rescue/page.tsx`, `app/contact/page.tsx`, `app/not-found.tsx`) as JSX children of
+named React components. Backing components in `components/` and `components/art/` own semantic
+markup, Tailwind styles, bespoke inline SVG artwork, accessibility and client interactions.
+Validate IDs, required fields, prices, availability, wording rules and references in `tests/content.test.ts`
+and `tests/hours.test.ts` with item-specific failures. Rename in `content/business.ts` and
+`site.config.json`. Keep the provisioner's config shape: name, description, domain, optional timeZone,
 jamstacks.siteId/cdnUrl and optional provisioningId. Business data never goes there. Reuse the design's
 illustrations and palette rather than adding unrelated assets.
 
